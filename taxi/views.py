@@ -63,8 +63,12 @@ class CarDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Car
     fields = "model"
     success_url = reverse_lazy("taxi:car-list")
-    template_name = "car_form.html"
+    template_name = "car_delete_confirmation.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['car_name'] = self.object.model
+        return context
 
 
 class DriverListView(LoginRequiredMixin, generic.ListView):

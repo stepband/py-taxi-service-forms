@@ -27,7 +27,7 @@ urlpatterns = [
         "cars/create", CarCreateView.as_view(), name="car_create"
     ),
     path('cars/<int:pk>/update/', CarUpdateView.as_view(), name="car-update"),
-    path("cars/<int:pk>/delete", CarDeleteView.as_view(), name="car-delete")
+    path("cars/<int:pk>/delete/", CarDeleteView.as_view(), name="car-delete")
 ]
 
 app_name = "taxi"

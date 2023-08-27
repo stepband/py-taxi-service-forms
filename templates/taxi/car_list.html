@@ -2,6 +2,8 @@
 
 {% block content %}
   <h1>Car list</h1>
+   <a href="{% url 'taxi:car_create' %}" class="btn btn-primary">Create Manufacturer</a>
+  <br>
   {% if car_list %}
     <table class="table">
       <tr>
@@ -24,6 +26,7 @@
         </li>
       {% endfor %}
     </ul>
+    {% endfor %}
   {% else %}
     <p>There are no cars in taxi</p>
   {% endif %}
